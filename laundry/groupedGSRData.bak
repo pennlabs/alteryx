@@ -1,0 +1,1018 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=Penn Mobile
+Table=Select mobile.account.* From mobile.account</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="first" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="last" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="pennkey" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="pennid" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="Int32" />
+            <Field name="email" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="affiliation" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="image_url" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="V_String" />
+            <Field name="created_at" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.account.* From mobile.account" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=Penn Mobile
+Table=Select mobile.study_spaces_booking.* From mobile.study_spaces_booking</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int32" />
+            <Field name="date" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="DateTime" />
+            <Field name="lid" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int32" />
+            <Field name="rid" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int32" />
+            <Field name="email" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="V_String" />
+            <Field name="start" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="DateTime" />
+            <Field name="end" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="DateTime" />
+            <Field name="booking_id" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="V_String" />
+            <Field name="is_cancelled" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int16" />
+            <Field name="reminder_sent" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int16" />
+            <Field name="account" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="V_String" />
+            <Field name="user" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.study_spaces_booking.* From mobile.study_spaces_booking" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1422" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="email" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="email" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_id" selected="True" input="Left_" />
+                <SelectField field="Left_first" selected="True" input="Left_" />
+                <SelectField field="Left_last" selected="True" input="Left_" />
+                <SelectField field="Left_pennkey" selected="True" input="Left_" />
+                <SelectField field="Left_email" selected="True" input="Left_" />
+                <SelectField field="Left_Concat_major" selected="True" input="Left_" />
+                <SelectField field="Left_Concat_expected_grad" selected="True" input="Left_" />
+                <SelectField field="Left_GRAD" selected="True" input="Left_" />
+                <SelectField field="Left_WH" selected="True" input="Left_" />
+                <SelectField field="Left_ENG" selected="True" input="Left_" />
+                <SelectField field="Left_COL" selected="True" input="Left_" />
+                <SelectField field="Left_NURS" selected="True" input="Left_" />
+                <SelectField field="Left_grad2020" selected="True" input="Left_" />
+                <SelectField field="Left_grad2021" selected="True" input="Left_" />
+                <SelectField field="Left_grad2022" selected="True" input="Left_" />
+                <SelectField field="Left_grad2023" selected="True" input="Left_" />
+                <SelectField field="Right_id" selected="False" rename="Right_id" input="Right_" />
+                <SelectField field="Right_date" selected="True" input="Right_" />
+                <SelectField field="Right_lid" selected="True" input="Right_" />
+                <SelectField field="Right_rid" selected="True" input="Right_" />
+                <SelectField field="Right_email" selected="True" rename="Right_email" input="Right_" />
+                <SelectField field="Right_is_cancelled" selected="True" input="Right_" />
+                <SelectField field="Right_user" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1698" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_12108_ace2410f43f04450a602c7afccefbbfd_\Engine_14612_471bc5d6fcb2410ab1d4c67965659859_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.school_major_account.* From mobile.school_major_account</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=Penn Mobile
+Table=Select mobile.school_major_account.* From mobile.school_major_account</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="account_id" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.school_major_account.* From mobile.school_major_account" type="V_String" />
+            <Field description="PrimaryKey" name="school_id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.school_major_account.* From mobile.school_major_account" type="Int32" />
+            <Field description="PrimaryKey" name="major" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.school_major_account.* From mobile.school_major_account" type="V_String" />
+            <Field name="expected_grad" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.school_major_account.* From mobile.school_major_account" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="186" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="account_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_id" selected="True" input="Left_" />
+                <SelectField field="Left_first" selected="True" input="Left_" />
+                <SelectField field="Left_last" selected="True" input="Left_" />
+                <SelectField field="Left_pennkey" selected="True" input="Left_" />
+                <SelectField field="Left_email" selected="True" input="Left_" />
+                <SelectField field="Left_image_url" selected="True" input="Left_" />
+                <SelectField field="Left_created_at" selected="True" input="Left_" />
+                <SelectField field="Right_account_id" selected="True" input="Right_" />
+                <SelectField field="Right_school_id" selected="True" input="Right_" />
+                <SelectField field="Right_major" selected="True" input="Right_" />
+                <SelectField field="Right_expected_grad" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings>
+        <Position x="270" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"id","lid","rid","email"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="378" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="id" action="GroupBy" rename="id" />
+            <SummarizeField field="first" action="GroupBy" rename="first" />
+            <SummarizeField field="last" action="GroupBy" rename="last" />
+            <SummarizeField field="pennkey" action="GroupBy" rename="pennkey" />
+            <SummarizeField field="email" action="GroupBy" rename="email" />
+            <SummarizeField field="major" action="Concat" rename="Concat_major">
+              <Concat_Start />
+              <Separator>,</Separator>
+              <Concat_End />
+            </SummarizeField>
+            <SummarizeField field="expected_grad" action="Concat" rename="Concat_expected_grad">
+              <Concat_Start />
+              <Separator>,</Separator>
+              <Concat_End />
+            </SummarizeField>
+            <SummarizeField field="school_id" action="Concat" rename="Concat_school_id">
+              <Concat_Start />
+              <Separator>,</Separator>
+              <Concat_End />
+            </SummarizeField>
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1518" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="WH" action="Sum" rename="WHCount" />
+            <SummarizeField field="GRAD" action="Sum" rename="GRADCount" />
+            <SummarizeField field="ENG" action="Sum" rename="ENGCount" />
+            <SummarizeField field="COL" action="Sum" rename="COLCount" />
+            <SummarizeField field="NURS" action="Sum" rename="NURSCount" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1530" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="grad2020" action="Sum" rename="Sum_grad2020" />
+            <SummarizeField field="grad2021" action="Sum" rename="Sum_grad2021" />
+            <SummarizeField field="grad2022" action="Sum" rename="Sum_grad2022" />
+            <SummarizeField field="grad2023" action="Sum" rename="Sum_grad2023" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1698" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_12108_ace2410f43f04450a602c7afccefbbfd_\Engine_14612_9274acc5acd2495c85db2e18424f3b43_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="606" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[GRAD]!=1 &amp;&amp;&#xA;Contains(Substring([Concat_school_id],0,3), &quot;1&quot;)" field="WH" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[WH = [GRAD]!=1 &&
+Contains(Substring([Concat_school_id],0,3), "1")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="702" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[GRAD]!=1 &amp;&amp;&#xA;Contains(Substring([Concat_school_id],0,3), &quot;2&quot;)" field="ENG" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[ENG = [GRAD]!=1 &&
+Contains(Substring([Concat_school_id],0,3), "2")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="school_id" selected="True" type="V_String" size="11" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="822" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[GRAD]!=1 &amp;&amp;&#xA;Contains(Substring([Concat_school_id],0,3), &quot;4&quot;)" field="COL" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[COL = [GRAD]!=1 &&
+Contains(Substring([Concat_school_id],0,3), "4")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="930" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[GRAD]!=1 &amp;&amp;&#xA;Contains(Substring([Concat_school_id],0,3), &quot;6&quot;)" field="NURS" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[NURS = [GRAD]!=1 &&
+Contains(Substring([Concat_school_id],0,3), "6")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1698" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_12108_ace2410f43f04450a602c7afccefbbfd_\Engine_14612_61dc35f28d7e4a7bb5860d645c284b0a_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="462" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[is_cancelled] = 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>is_cancelled</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-06 16:54:07</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2019-12-06 16:54:07</StartDate>
+              <EndDate>2019-12-06 16:54:07</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[is_cancelled] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="474" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Contains(Substring([Concat_school_id],0,1), &quot;3&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;5&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;7&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;8&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;9&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;10&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;11&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;12&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;13&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;14&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;15&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;16&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;17&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;18&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;19&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;20&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;21&quot;)&#xA;||&#xA;Contains(Substring([Concat_school_id],0,1), &quot;22&quot;)" field="GRAD" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>GRAD = Contains(Substring([Concat_school_id],0,1), "3")
+||
+Contains(Substring([C...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1038" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Contains([Concat_expected_grad],&quot;Spring 2020&quot;)&#xA;|| Contains([Concat_expected_grad], &quot;Fall 2019&quot;)" field="grad2020" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>grad2020 = Contains([Concat_expected_grad],"Spring 2020")
+|| Contains([Concat_ex...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1134" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Contains([Concat_expected_grad],&quot;Spring 2021&quot;)&#xA;|| Contains([Concat_expected_grad], &quot;Fall 2020&quot;)" field="grad2021" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>grad2021 = Contains([Concat_expected_grad],"Spring 2021")
+|| Contains([Concat_ex...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1230" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Contains([Concat_expected_grad],&quot;Spring 2022&quot;)&#xA;|| Contains([Concat_expected_grad], &quot;Fall 2021&quot;)" field="grad2022" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>grad2022 = Contains([Concat_expected_grad],"Spring 2022")
+|| Contains([Concat_ex...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1326" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Contains([Concat_expected_grad],&quot;Spring 2023&quot;)&#xA;|| Contains([Concat_expected_grad], &quot;Fall 2022&quot;)" field="grad2023" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>grad2023 = Contains([Concat_expected_grad],"Spring 2023")
+|| Contains([Concat_ex...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1686" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_12108_ace2410f43f04450a602c7afccefbbfd_\Engine_14612_24b85afcce8c4063b2b7c78caf25644f_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="474" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Concat_major</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Concat_major</RootName>
+          <Delimeters value="," />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="690" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Concat_major1" action="GroupBy" rename="1stMajor" />
+            <SummarizeField field="Concat_major1" action="Count" rename="1stMajorCount" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="690" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Concat_major2" action="GroupBy" rename="2ndMajor" />
+            <SummarizeField field="Concat_major2" action="Count" rename="2ndMajorCount" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="690" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Concat_major3" action="GroupBy" rename="3rdMajor" />
+            <SummarizeField field="Concat_major2" action="Count" rename="3rdMajorCount" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
+        <Position x="1218" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JoinByRecPos value="False" />
+          <JoinFields>
+            <JoinInfo connection="#1">
+              <Field field="1stMajor" />
+            </JoinInfo>
+            <JoinInfo connection="#2">
+              <Field field="2ndMajor" />
+            </JoinInfo>
+            <JoinInfo connection="#3">
+              <Field field="3rdMajor" />
+            </JoinInfo>
+          </JoinFields>
+          <CartesianMode>Error</CartesianMode>
+          <OutputJoinOnly value="False" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Input_#1_RecordID" selected="False" />
+                <SelectField field="Input_#2_RecordID" selected="False" />
+                <SelectField field="Input_#3_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoinMultiple" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="822" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="822" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="822" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="15" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output26" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="True" />
+      <Destination ToolID="10" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="10" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>groupedGSRData</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
