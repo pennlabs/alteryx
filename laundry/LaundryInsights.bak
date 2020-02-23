@@ -1,244 +1,335 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2019.3">
   <Nodes>
-    <Node ToolID="2">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="66" y="222" />
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="54" width="1423.46" height="444" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
-          <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference</File>
-          <FormatSpecificOptions>
-            <PreSQL />
-            <ReadCentroids>False</ReadCentroids>
-            <PreSQLOnConfig>True</PreSQLOnConfig>
-            <NoProgress>True</NoProgress>
-            <CacheData>False</CacheData>
-            <TableStyle>Quoted</TableStyle>
-            <ReadUncommitted>False</ReadUncommitted>
-            <PostSQL />
-          </FormatSpecificOptions>
+          <Caption>Quad Laundry Preference Counter: Given a Hall and floor in the Quad, this finds the number of people with preferences for each laundry room. Ex. 1 person on Ashurst floor 2 goes to room 0, and 1 person on Ashhurst floor 2 goes to room 1, etc.</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>DSN=Penn Mobile
-Table=Select mobile.laundry_preference.* From mobile.laundry_preference</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
-            <Field name="created_at" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="DateTime" />
-            <Field name="user_id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
-            <Field name="account" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="V_String" />
-            <Field name="room_id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
-    <Node ToolID="6">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="210" y="294" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>!IsNull([account])</Expression>
-          <Mode>Simple</Mode>
-          <Simple>
-            <Operator>IsNotNull</Operator>
-            <Field>account</Field>
-            <Operands>
-              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-              <DateType>fixed</DateType>
-              <PeriodDate>2020-02-21 16:34:26</PeriodDate>
-              <PeriodType>
-              </PeriodType>
-              <PeriodCount>0</PeriodCount>
-              <Operand>
-              </Operand>
-              <StartDate>2020-02-21 16:34:26</StartDate>
-              <EndDate>2020-02-21 16:34:26</EndDate>
-            </Operands>
-          </Simple>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>!IsNull([account])</DefaultAnnotationText>
+          <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="354" y="138" />
-      </GuiSettings>
-      <Properties>
-        <Configuration joinByRecordPos="False">
-          <JoinInfo connection="Left">
-            <Field field="account" />
-          </JoinInfo>
-          <JoinInfo connection="Right">
-            <Field field="account" />
-          </JoinInfo>
-          <SelectConfiguration>
-            <Configuration outputConnection="Join">
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Left_start" selected="False" input="Left_" />
-                <SelectField field="Left_end" selected="False" input="Left_" />
-                <SelectField field="Left_created_at" selected="False" input="Left_" />
-                <SelectField field="Right_id" selected="False" input="Right_" />
-                <SelectField field="Right_created_at" selected="False" rename="Right_created_at" input="Right_" />
-                <SelectField field="Right_user_id" selected="False" input="Right_" />
-                <SelectField field="Right_account" selected="False" rename="Right_account" input="Right_" />
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
+      <ChildNodes>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="306.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
+              <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <ReadCentroids>False</ReadCentroids>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
             </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-    </Node>
-    <Node ToolID="8">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="798" y="-6" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_55368_4fc84c5f3e6c4f72a26276affb2d7394_\Engine_50900_9f8bfbdaf6ec4a458021bc46b21ce93e_.yxdb</TempFile>
-          <TempFileDataProfiling />
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Profile</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="9">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
-          <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing</File>
-          <FormatSpecificOptions>
-            <PreSQL />
-            <ReadCentroids>False</ReadCentroids>
-            <PreSQLOnConfig>True</PreSQLOnConfig>
-            <NoProgress>True</NoProgress>
-            <CacheData>False</CacheData>
-            <TableStyle>Quoted</TableStyle>
-            <ReadUncommitted>False</ReadUncommitted>
-            <PostSQL />
-          </FormatSpecificOptions>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>DSN=Penn Mobile
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=Penn Mobile
+Table=Select mobile.laundry_preference.* From mobile.laundry_preference</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
+                <Field name="created_at" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="DateTime" />
+                <Field name="user_id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
+                <Field name="account" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="V_String" />
+                <Field name="room_id" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.laundry_preference.* From mobile.laundry_preference" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="211" y="258.9997" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!IsNull([account])</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>account</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-21 16:34:26</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-02-21 16:34:26</StartDate>
+                  <EndDate>2020-02-21 16:34:26</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([account])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="391.0002" y="210.9997" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="account" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="account" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_start" selected="False" input="Left_" />
+                    <SelectField field="Left_end" selected="False" input="Left_" />
+                    <SelectField field="Left_created_at" selected="False" input="Left_" />
+                    <SelectField field="Right_id" selected="False" input="Right_" />
+                    <SelectField field="Right_created_at" selected="False" rename="Right_created_at" input="Right_" />
+                    <SelectField field="Right_user_id" selected="False" input="Right_" />
+                    <SelectField field="Right_account" selected="False" rename="Right_account" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79.00023" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords>432EAD0EF8E47B5DF8F2E487772B518AE1B3985038D57AC26</Passwords>
+              <File RecordLimit="" FileFormat="23">odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <ReadCentroids>False</ReadCentroids>
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=Penn Mobile
 Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field description="PrimaryKey" name="account" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
-            <Field name="house" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
-            <Field name="location" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
-            <Field name="address" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
-            <Field name="off_campus" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int16" />
-            <Field description="PrimaryKey" name="start" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int32" />
-            <Field name="end" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int32" />
-            <Field name="created_at" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="DateTime" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
-    <Node ToolID="10">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="258" y="138" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>[start] = 2019</Expression>
-          <Mode>Simple</Mode>
-          <Simple>
-            <Operator>=</Operator>
-            <Field>start</Field>
-            <Operands>
-              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-              <DateType>fixed</DateType>
-              <PeriodDate>2020-02-21 16:33:21</PeriodDate>
-              <PeriodType>
-              </PeriodType>
-              <PeriodCount>0</PeriodCount>
-              <Operand>2019</Operand>
-              <StartDate>2020-02-21 16:33:21</StartDate>
-              <EndDate>2020-02-21 16:33:21</EndDate>
-            </Operands>
-          </Simple>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>[start] = 2019</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="11">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="546" y="6" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>Contains([house],"Lauder")&amp;&amp; [room_id] = 48</Expression>
-          <Mode>Custom</Mode>
-          <Simple>
-            <Operator>Contains</Operator>
-            <Field>house</Field>
-            <Operands>
-              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-              <DateType>fixed</DateType>
-              <PeriodDate>2020-02-21 17:24:40</PeriodDate>
-              <PeriodType>
-              </PeriodType>
-              <PeriodCount>0</PeriodCount>
-              <Operand>Lauder</Operand>
-              <StartDate>2020-02-21 17:24:40</StartDate>
-              <EndDate>2020-02-21 17:24:40</EndDate>
-            </Operands>
-          </Simple>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Contains([house],"Lauder")&amp;&amp; [room_id] = 48</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="account" size="255" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
+                <Field name="house" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
+                <Field name="location" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
+                <Field name="address" size="16777216" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="V_String" />
+                <Field name="off_campus" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int16" />
+                <Field description="PrimaryKey" name="start" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int32" />
+                <Field name="end" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="Int32" />
+                <Field name="created_at" source="File: odbc:DSN=Penn Mobile;UID=hassan;PWD=__EncPwd1__|||Select mobile.housing.* From mobile.housing" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="211.0002" y="174.9997" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[start] = 2019</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>start</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-21 16:33:21</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2019</Operand>
+                  <StartDate>2020-02-21 16:33:21</StartDate>
+                  <EndDate>2020-02-21 16:33:21</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[start] = 2019</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="499.0002" y="210.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[room_id] = 0 ||
+[room_id] = 1 ||
+[room_id] = 2 ||
+[room_id] = 3 ||
+[room_id] = 30 ||
+[room_id] = 32
+&amp;&amp; ![off_campus]
+&amp;&amp; (Contains([house], "Fisher")||Contains([house], "Riepe")||Contains([house], "Ware"))</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>room_id</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-23 12:20:54</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-02-23 12:20:54</StartDate>
+                  <EndDate>2020-02-23 12:20:54</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[room_id] = 0 ||
+[room_id] = 1 ||
+[room_id] = 2 ||
+[room_id] = 3 ||
+[room_id] = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="798.0001" y="197.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="location" action="GroupBy" rename="location" />
+                <SummarizeField field="floor" action="GroupBy" rename="floor" />
+                <SummarizeField field="room_id" action="GroupBy" rename="room_id" />
+                <SummarizeField field="room_id" action="Count" rename="Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="703.0001" y="198.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Substring([location],4,Length([location])-19)" field="location" size="16777216" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[location = Substring([location],4,Length([location])-19)
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="882.0001" y="197.9998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_20172_2192daf0b17c40e0b5fdf7c9ada3ef9d_\Engine_9824_db0a81493aa1476cb295951720381b20_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="595.0001" y="198.9997" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Substring([location],0,1)" field="floor" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[floor = Substring([location],0,1)
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
@@ -264,7 +355,19 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="True" />
-      <Destination ToolID="8" Connection="Input" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
