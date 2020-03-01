@@ -3,11 +3,11 @@
   <Nodes>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="1423.46" height="444" />
+        <Position x="54" y="53.99818" width="2888.775" height="815.9994" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Caption>Quad Laundry Preference Counter: Given a Hall and floor in the Quad, this finds the number of people with preferences for each laundry room. Ex. 1 person on Ashurst floor 2 goes to room 0, and 1 person on Ashhurst floor 2 goes to room 1, etc.</Caption>
+          <Caption>Laundry Room Recommendation Engine: For each College House, provides one or two laundry room recommendations for studends to add to their preferences in Penn Mobile. For all houses other than the Quad, I manually assigned the recommendations, which were logically straightforward. The Quad was a more involved process that required development of a system to track which laundry rooms students used in each Quad House and Floor in order to provide the most accurate recommendation possible.</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
           <Disabled value="False" />
           <Folded value="False" />
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="306.9998" />
+            <Position x="79.00008" y="333" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -58,7 +58,7 @@ Table=Select mobile.laundry_preference.* From mobile.laundry_preference</Default
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="211" y="258.9997" />
+            <Position x="211.0006" y="284.9979" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -91,7 +91,7 @@ Table=Select mobile.laundry_preference.* From mobile.laundry_preference</Default
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="391.0002" y="210.9997" />
+            <Position x="391.0002" y="236.9975" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -128,7 +128,7 @@ Table=Select mobile.laundry_preference.* From mobile.laundry_preference</Default
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79.00023" y="103" />
+            <Position x="79.00011" y="128.9974" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -168,7 +168,7 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="211.0002" y="174.9997" />
+            <Position x="211.0016" y="200.9984" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -200,7 +200,7 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="499.0002" y="210.9998" />
+            <Position x="498.0001" y="233.9983" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -244,7 +244,7 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="798.0001" y="197.9998" />
+            <Position x="821.9999" y="102.9982" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -265,7 +265,7 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="703.0001" y="198.9998" />
+            <Position x="713.9992" y="103.9988" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -282,13 +282,1038 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
-        <Node ToolID="17">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="882.0001" y="197.9998" />
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="594.0014" y="103.9971" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_20172_2192daf0b17c40e0b5fdf7c9ada3ef9d_\Engine_9824_db0a81493aa1476cb295951720381b20_.yxdb</TempFile>
+              <FormulaFields>
+                <FormulaField expression="Substring([location],0,1)" field="floor" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[floor = Substring([location],0,1)
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="762" y="305.9983" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Contains([location],"Harrison")</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-23 22:04:12</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-02-23 22:04:12</StartDate>
+                  <EndDate>2020-02-23 22:04:12</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Contains([location],"Harrison")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="930" y="102.9985" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Count" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="1026" y="114.9988" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="location" />
+                <Field field="floor" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1098" y="211.0005" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="location" />
+                <Field field="floor" />
+                <Field field="room_id" />
+                <Field field="Count" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="location" />
+                <Field field="floor" />
+                <Field field="room_id" />
+                <Field field="Count" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_location" selected="True" rename="Right_location" input="Right_" />
+                    <SelectField field="Right_floor" selected="True" rename="Right_floor" input="Right_" />
+                    <SelectField field="Right_room_id" selected="True" rename="Right_room_id" input="Right_" />
+                    <SelectField field="Right_Count" selected="True" rename="Right_Count" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1314" y="223.0006" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Count" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="1482" y="223.0002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="location" />
+                <Field field="floor" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1578" y="127.0002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="location" />
+                <Field field="floor" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="location" />
+                <Field field="floor" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_location" selected="True" rename="Right_location" input="Right_" />
+                    <SelectField field="Right_floor" selected="True" rename="Right_floor" input="Right_" />
+                    <SelectField field="Right_room_id" selected="True" rename="Right_room_id" input="Right_" />
+                    <SelectField field="Right_Count" selected="True" rename="Right_Count" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1674" y="127.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1758" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="room_id" selected="True" rename="first_recommendation_id" />
+                <SelectField field="Count" selected="True" rename="first_recommendation_count" />
+                <SelectField field="Right_location" selected="False" />
+                <SelectField field="Right_floor" selected="False" />
+                <SelectField field="Right_room_id" selected="True" rename="second_recommendation_id" />
+                <SelectField field="Right_Count" selected="True" rename="second_recommendation_count" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="762.0004" y="509.9979" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Contains([location],"Harnwell")</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-23 22:04:12</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-02-23 22:04:12</StartDate>
+                  <EndDate>2020-02-23 22:04:12</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Contains([location],"Harnwell")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="761.9999" y="665.9978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Contains([location],"Rodin")</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-23 22:04:12</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-02-23 22:04:12</StartDate>
+                  <EndDate>2020-02-23 22:04:12</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Contains([location],"Rodin")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="593.9999" y="257.9984" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Substring([location],0,Length([location])-15)" field="location" size="16777216" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[location = Substring([location],0,Length([location])-15)
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="47">
+          <GuiSettings>
+            <Position x="653.9999" y="257.9981" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">"location"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="870" y="293.9982" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Length([location]) = 13</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>location</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-03-01 13:26:21</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-03-01 13:26:21</StartDate>
+                  <EndDate>2020-03-01 13:26:21</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Length([location]) = 13</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1062" y="281.998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;10&quot;&#xA;THEN 21&#xA;ELSEIF Substring([location],0,2) = &quot;11&quot;&#xA;THEN 21&#xA;ELSEIF Substring([location],0,2) = &quot;12&quot;&#xA;THEN 22&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 22&#xA;ELSEIF Substring([location],0,2) = &quot;14&quot;&#xA;THEN 23&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 23&#xA;ELSEIF Substring([location],0,2) = &quot;16&quot;&#xA;THEN 24&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 24&#xA;ELSEIF Substring([location],0,2) = &quot;18&quot;&#xA;THEN 25&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 25&#xA;ELSEIF Substring([location],0,2) = &quot;20&quot;&#xA;THEN 26&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 26&#xA;ELSEIF Substring([location],0,2) = &quot;22&quot;&#xA;THEN 27&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 27&#xA;ELSE&#xA;28&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,2) = "10"
+THEN 21
+ELSEIF Sub...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1050" y="353.9983" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;2&quot;&#xA;THEN 49&#xA;ELSEIF Substring([location],0,1) = &quot;3&quot;&#xA;THEN 49&#xA;ELSEIF Substring([location],0,1) = &quot;4&quot;&#xA;THEN 18&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 18&#xA;ELSEIF Substring([location],0,1) = &quot;6&quot;&#xA;THEN 19&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 19&#xA;ELSEIF Substring([location],0,1) = &quot;8&quot;&#xA;THEN 20&#xA;ELSE&#xA;20&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,1) = "2"
+THEN 49
+ELSEIF Subs...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1110" y="353.9984" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;3&quot;&#xA;THEN 18&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 19&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 20&#xA;ELSEIF Substring([location],0,1) = &quot;9&quot;&#xA;THEN 21&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,1) = "3"
+THEN 18
+ELSEIF Sub...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1158" y="281.998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;11&quot;&#xA;THEN 22&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 23&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 24&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 25&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 26&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 27&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 28&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,2) = "11"
+THEN 22
+ELSEIF Su...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="858" y="497.9992" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Length([location]) = 13</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>location</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-03-01 13:26:21</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-03-01 13:26:21</StartDate>
+                  <EndDate>2020-03-01 13:26:21</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Length([location]) = 13</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1050" y="449.9993" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;10&quot;&#xA;THEN 10&#xA;ELSEIF Substring([location],0,2) = &quot;11&quot;&#xA;THEN 10&#xA;ELSEIF Substring([location],0,2) = &quot;12&quot;&#xA;THEN 11&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 11&#xA;ELSEIF Substring([location],0,2) = &quot;14&quot;&#xA;THEN 12&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 12&#xA;ELSEIF Substring([location],0,2) = &quot;16&quot;&#xA;THEN 13&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 13&#xA;ELSEIF Substring([location],0,2) = &quot;18&quot;&#xA;THEN 14&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 14&#xA;ELSEIF Substring([location],0,2) = &quot;20&quot;&#xA;THEN 15&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 15&#xA;ELSEIF Substring([location],0,2) = &quot;22&quot;&#xA;THEN 16&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 16&#xA;ELSE&#xA;17&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,2) = "10"
+THEN 10
+ELSEIF Sub...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="57">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1050" y="521.9992" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;2&quot;&#xA;THEN 6&#xA;ELSEIF Substring([location],0,1) = &quot;3&quot;&#xA;THEN 6&#xA;ELSEIF Substring([location],0,1) = &quot;4&quot;&#xA;THEN 7&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 7&#xA;ELSEIF Substring([location],0,1) = &quot;6&quot;&#xA;THEN 8&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 8&#xA;ELSEIF Substring([location],0,1) = &quot;8&quot;&#xA;THEN 9&#xA;ELSE&#xA;9&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,1) = "2"
+THEN 6
+ELSEIF Subst...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1146" y="521.9991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;3&quot;&#xA;THEN 7&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 8&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 9&#xA;ELSEIF Substring([location],0,1) = &quot;9&quot;&#xA;THEN 10&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,1) = "3"
+THEN 7
+ELSEIF Subs...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1122" y="449.9993" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;11&quot;&#xA;THEN 11&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 12&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 13&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 14&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 15&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 16&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 17&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,2) = "11"
+THEN 11
+ELSEIF Su...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1290" y="317.9988" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="62">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1278" y="461.9988" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="858.0001" y="653.9976" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Length([location]) = 10</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>location</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-03-01 13:26:21</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2020-03-01 13:26:21</StartDate>
+                  <EndDate>2020-03-01 13:26:21</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Length([location]) = 10</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1038" y="605.9988" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;10&quot;&#xA;THEN 37&#xA;ELSEIF Substring([location],0,2) = &quot;11&quot;&#xA;THEN 37&#xA;ELSEIF Substring([location],0,2) = &quot;12&quot;&#xA;THEN 38&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 38&#xA;ELSEIF Substring([location],0,2) = &quot;14&quot;&#xA;THEN 39&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 39&#xA;ELSEIF Substring([location],0,2) = &quot;16&quot;&#xA;THEN 40&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 40&#xA;ELSEIF Substring([location],0,2) = &quot;18&quot;&#xA;THEN 41&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 41&#xA;ELSEIF Substring([location],0,2) = &quot;20&quot;&#xA;THEN 42&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 42&#xA;ELSEIF Substring([location],0,2) = &quot;22&quot;&#xA;THEN 43&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 43&#xA;ELSE&#xA;44&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,2) = "10"
+THEN 37
+ELSEIF Sub...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="65">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1038" y="677.9991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;2&quot;&#xA;THEN 33&#xA;ELSEIF Substring([location],0,1) = &quot;3&quot;&#xA;THEN 33&#xA;ELSEIF Substring([location],0,1) = &quot;4&quot;&#xA;THEN 34&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 34&#xA;ELSEIF Substring([location],0,1) = &quot;6&quot;&#xA;THEN 35&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 35&#xA;ELSEIF Substring([location],0,1) = &quot;8&quot;&#xA;THEN 36&#xA;ELSE&#xA;36&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Substring([location],0,1) = "2"
+THEN 33
+ELSEIF Subs...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1110" y="677.9988" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,1) = &quot;3&quot;&#xA;THEN 34&#xA;ELSEIF Substring([location],0,1) = &quot;5&quot;&#xA;THEN 35&#xA;ELSEIF Substring([location],0,1) = &quot;7&quot;&#xA;THEN 36&#xA;ELSEIF Substring([location],0,1) = &quot;9&quot;&#xA;THEN 37&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,1) = "3"
+THEN 34
+ELSEIF Sub...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1110" y="605.9993" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Substring([location],0,2) = &quot;11&quot;&#xA;THEN 38&#xA;ELSEIF Substring([location],0,2) = &quot;13&quot;&#xA;THEN 39&#xA;ELSEIF Substring([location],0,2) = &quot;15&quot;&#xA;THEN 40&#xA;ELSEIF Substring([location],0,2) = &quot;17&quot;&#xA;THEN 41&#xA;ELSEIF Substring([location],0,2) = &quot;19&quot;&#xA;THEN 42&#xA;ELSEIF Substring([location],0,2) = &quot;21&quot;&#xA;THEN 43&#xA;ELSEIF Substring([location],0,2) = &quot;23&quot;&#xA;THEN 44&#xA;ELSE&#xA;Null()&#xA;ENDIF" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>second_recommendation_id = if Substring([location],0,2) = "11"
+THEN 38
+ELSEIF Su...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1278" y="617.9991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="70">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1398" y="462" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>UNIONED HIGHRISES</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="762" y="785.9976" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Contains([location], &quot;Lauder&quot;)&#xA;THEN 48&#xA;ELSEIF Contains([location],&quot;Hill&quot;)&#xA;THEN 29&#xA;ELSEIF Contains([location],&quot;DuBois&quot;)&#xA;THEN 4&#xA;ELSEIF Contains([location],&quot;Mayer&quot;)&#xA;THEN 31&#xA;ELSEIF Contains([location],&quot;Sansom Place East&quot;)&#xA;THEN 45&#xA;ELSEIF Contains([location],&quot;Sansom Place West&quot;)&#xA;THEN 46&#xA;ELSEIF Contains([location],&quot;Stouffer Commons&quot;)&#xA;THEN 47&#xA;ELSEIF Contains([location],&quot;Van Pelt&quot;)&#xA;THEN 50&#xA;ELSEIF Contains([location],&quot;Class of 1925&quot;)&#xA;THEN 51&#xA;ELSE&#xA;52&#xA;ENDIF" field="first_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>first_recommendation_id = if Contains([location], "Lauder")
+THEN 48
+ELSEIF Conta...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1338" y="773.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Null()" field="second_recommendation_id" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[second_recommendation_id = Null()
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1554" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>!(Quad) Union</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="966" y="281.998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,2))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,2))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="966" y="353.9982" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,1))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,1))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="966" y="449.9995" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,2))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,2))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="954.0001" y="521.9994" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,1))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,1))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="966" y="605.9996" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,2))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,2))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="966" y="677.9995" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToNumber(Substring([location],0,1))" field="floor" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[floor = ToNumber(Substring([location],0,1))
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1746" y="486" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="account" selected="False" />
+                <SelectField field="house" selected="False" />
+                <SelectField field="address" selected="False" />
+                <SelectField field="off_campus" selected="False" />
+                <SelectField field="room_id" selected="False" rename="first_recommendation_id" />
+                <SelectField field="Count" selected="False" rename="first_recommendation_count" />
+                <SelectField field="Right_location" selected="False" />
+                <SelectField field="Right_floor" selected="False" />
+                <SelectField field="Right_room_id" selected="False" rename="second_recommendation_id" />
+                <SelectField field="Right_Count" selected="False" rename="second_recommendation_count" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1938" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="85">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="2058" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\hhamm\AppData\Local\Temp\Engine_10400_54679b8f6b8b4d758c63ecd384beac98_\Engine_15228_bb55fdaf7d7842d0a373b785f1731a89_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -309,25 +1334,6 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="18">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="595.0001" y="198.9997" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="Substring([location],0,1)" field="floor" size="1073741823" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[floor = Substring([location],0,1)
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
       </ChildNodes>
     </Node>
@@ -358,8 +1364,20 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
       <Destination ToolID="18" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="11" Connection="False" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Unique" />
+      <Destination ToolID="27" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
@@ -368,6 +1386,206 @@ Table=Select mobile.housing.* From mobile.housing</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="18" Connection="Output" />
       <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="True" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Unique" />
+      <Destination ToolID="30" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Unique" />
+      <Destination ToolID="30" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Right" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="30" Connection="Join" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="30" Connection="Left" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="83" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="True" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="True" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output26" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output26" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output26" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output26" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="True" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="False" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="True" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="False" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="True" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="False" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Output" />
+      <Destination ToolID="85" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
